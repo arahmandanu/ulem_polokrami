@@ -1,0 +1,12 @@
+// 1. Core Bootstrap
+@import "bootstrap/scss/bootstrap";
+
+// 2. Bootstrap Icons (relying on module resolution)
+@import "bootstrap-icons/font/bootstrap-icons";
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+// 3. Add your custom SCSS below this line:
+/* For example:
+body {
+    background-color: #f0f8ff;
+}
+*/

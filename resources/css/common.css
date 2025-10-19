@@ -1,0 +1,470 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fdf8f2;
+    color: #4e342e;
+    scroll-behavior: smooth;
+}
+
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(rgba(60, 40, 20, 0.6), rgba(60, 40, 20, 0.6)),
+        url('https://images.unsplash.com/photo-1578926288174-6f4d5e434f0f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.hero img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #f8f1e7;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    color: #f7e4b3;
+}
+
+.section-title {
+    font-family: 'Great Vibes', cursive;
+    color: #b88a44 !important;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.section {
+    padding: 80px 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.gift-card {
+    border: 2px dashed #b88a44;
+    padding: 20px;
+    border-radius: 12px;
+    background: #fff9f0;
+}
+
+/* Kontrol Audio */
+.audio-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    /* PERUBAHAN: PERKECIL UKURAN */
+    width: 25px;
+    /* Dari 60px menjadi 50px */
+    height: 25px;
+    /* Dari 60px menjadi 50px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 999;
+}
+
+.audio-control:hover {
+    /* Tetap jaga efek hover */
+    transform: scale(1.1);
+}
+
+/* Grid Gambar */
+.memory-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.memory-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
+}
+
+/* Lightbox */
+.lightbox {
+    display: flex;
+    /* tetap flex supaya posisi di tengah */
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    inset: 0;
+    z-index: 1055;
+    background-color: rgba(15, 15, 15, 0.9);
+    cursor: zoom-out;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+}
+
+.lightbox-content.zoomed {
+    transform: scale(1.8);
+    cursor: zoom-out;
+}
+
+/* Efek animasi saat muncul */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* # light box */
+
+/* Progress Bar Loading */
+/* ===== Romantic Opening Loader (Modified) ===== */
+#pageLoader {
+    position: fixed;
+    inset: 0;
+    /* Gabungkan Background Gradien + Background PNG */
+    background:
+        /* LAPISAN 1: Background PNG Dekoratif (misalnya pola) */
+        /* url('../../public/image/borderjawa.png'), */
+        /* Ganti 'loader-pattern.png' dengan nama file Anda */
+        /* LAPISAN 2: Background Gradien yang Anda berikan */
+        linear-gradient(160deg, #fdf8f2 0%, #f1e3c6 100%);
+
+    /* Pengaturan untuk Background PNG */
+    background-size:
+        /* Ukuran pattern: 'auto' atau '200px' untuk pola berulang */
+        200px,
+        /* Ukuran gradien: 'cover' */
+        cover;
+    background-repeat: repeat, no-repeat;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+    transition: opacity 0.8s ease;
+    text-align: center;
+}
+
+#pageLoader.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Styling border dekoratif untuk area konten utama (opsional, tapi disarankan) */
+/* Karena tidak ada kotak di dalam #pageLoader Anda, kita akan menambahkan border langsung ke #recipientInfo atau membuat div pembungkus baru. */
+
+/* Styling untuk elemen yang ada di dalam loader (agar lebih menonjol) */
+#recipientInfo {
+    /* Menambahkan padding dan border sederhana yang menyerupai 'bingkai' */
+    border: 3px solid #b88a44;
+    /* Border warna emas */
+    padding: 15px 30px;
+    margin-top: 15px !important;
+    margin-bottom: 25px !important;
+    background-color: rgba(255, 255, 255, 0.85);
+    /* Latar semi-transparan agar teks terbaca */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling untuk teks loader */
+#loaderText {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    /* Karena kita sudah punya background terang, ganti warna teks jadi gelap/cokelat */
+    color: #4e342e;
+    /* Warna cokelat tua yang elegan */
+    animation: none;
+    /* Matikan animasi fadePulse untuk teks ini jika tidak digunakan */
+}
+
+/* Biarkan animasi tetap ada, tapi pastikan warnanya kontras dengan background baru */
+.progress-container {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 250px;
+    /* Lebar tetap */
+    height: 8px;
+    margin-top: 15px;
+
+    /* BARIS TAMBAHAN UNTUK MEMUSATKAN HORIZONTAL */
+    margin-left: auto;
+    margin-right: auto;
+    /* Atau lebih singkat: */
+    margin: 15px auto 0;
+    /* (Top 15px, Left/Right auto, Bottom 0) */
+
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+    height: 100%;
+    /* Gunakan warna emas untuk progress bar */
+    background-color: #b88a44;
+    transition: width 0.3s ease;
+}
+
+/* Styling Tombol */
+.btn-gold {
+    /* Pastikan elemen adalah block agar padding dan width bekerja */
+    display: inline-block;
+
+    background-color: #b88a44;
+    color: white;
+    border: none;
+    font-size: 1.1rem;
+    padding: 10px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(184, 138, 68, 0.5);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-gold:hover {
+    background-color: #9c7b3d;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(184, 138, 68, 0.7);
+}
+
+/* ANIMASI FADEPULSE ASLI */
+@keyframes fadePulse {
+
+    0%,
+    100% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+/* first view */
+#nameText {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    /* Karena kita sudah punya background terang, ganti warna teks jadi gelap/cokelat */
+    color: white;
+    font-weight: 500;
+    /* Warna cokelat tua yang elegan */
+    animation: none;
+    /* Matikan animasi fadePulse untuk teks ini jika tidak digunakan */
+}
+
+/* end of firs view */
+
+/* ===== Progress Bar ===== */
+.progress-container {
+    width: 250px;
+    height: 10px;
+    background-color: #e7d7b4;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #b88a44;
+    transition: width 0.3s ease;
+}
+
+/* ===== Buka Undangan Button ===== */
+#startInvitation {
+    margin-top: 25px;
+    /* INI ADALAH YANG MEMBUAT TOMBOL AWALNYA HILANG */
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+#startInvitation.show {
+    /* INI ADALAH YANG MEMBUAT TOMBOL MUNCUL */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Posisi Awal (Tersembunyi) */
+.animate-start {
+    opacity: 0;
+    transition: all 1s ease-out;
+    /* Durasi dan tipe transisi */
+}
+
+.slide-left {
+    transform: translateX(-50px);
+}
+
+.slide-right {
+    transform: translateX(50px);
+}
+
+/* Posisi Akhir (Terlihat) */
+.animate-show {
+    opacity: 1;
+    transform: translateX(0) !important;
+}
+
+/* Tambahkan sedikit efek pada gambar di section couple */
+#couple img {
+    border: 3px solid #f7e4b3;
+    /* Sedikit beda dari warna utama */
+    background-color: #fff;
+    padding: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    /* Tambahkan sedikit border-radius */
+}
+
+/* New Countdown Style */
+.countdown-item {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 15px 10px;
+    border-radius: 8px;
+    background-color: #b88a44;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 50px;
+}
+
+.countdown-item h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    line-height: 1;
+}
+
+.countdown-item p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+/* --- ANIMASI SLIDE SAAT SCROLL --- */
+
+/* Posisi Awal (Tersembunyi) */
+.animate-start {
+    opacity: 0;
+    /* GANTI: Gunakan scale untuk efek zoom-in, HILANGKAN translateX */
+    transform: scale(0.95);
+    /* Mulai dari 95% ukuran normal */
+    transition: all 1s ease-out;
+}
+
+/* Posisi Akhir (Terlihat) */
+.animate-show {
+    opacity: 1;
+    /* Kembali ke ukuran 100% (normal) saat terlihat */
+    transform: scale(1) !important;
+    /* Gunakan !important jika diperlukan, atau pastikan transform: none tidak ada */
+}
+
+/* Tambahkan sedikit efek pada gambar di section couple */
+#couple img {
+    border: 3px solid #f7e4b3;
+    /* Sedikit beda dari warna utama */
+    background-color: #fff;
+    padding: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    /* Tambahkan sedikit border-radius */
+}
+
+.arabic-text {
+    font-family: 'Times New Roman', serif;
+    /* Font yang umum digunakan untuk teks Arab */
+    /* PERUBAHAN: PERBESAR UKURAN FONT */
+    font-size: 2.5rem;
+    line-height: 2.5;
+    /* PERUBAHAN: GANTI WARNA MENJADI EMAS (#b88a44) */
+    color: #b88a44;
+    font-weight: 500;
+    /* Tambahkan sedikit ketebalan agar lebih menonjol */
+}
+
+/* Penyesuaian responsif (pastikan ukuran tetap terlihat baik di HP) */
+@media (max-width: 768px) {
+    .arabic-text {
+        /* Ukuran di HP dikurangi sedikit agar tidak terlalu besar */
+        font-size: 1.8rem;
+        line-height: 2;
+    }
+}
+
+/* width */
+::-webkit-scrollbar {
+    /* Biarkan lebar tetap, atau sedikit lebih ramping */
+    width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    /* Ganti shadow abu-abu dengan warna gading/putih bersih */
+    background: #fdf8f2;
+    /* Beri bayangan lembut yang lebih halus dari 'inset 0 0 5px grey' */
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    /* Ganti warna merah dengan warna Emas / Kuningan */
+    background: #b88a44;
+    border-radius: 6px;
+    /* Tambahkan border 1px warna gading untuk memisahkan dari track */
+    border: 3px solid #fdf8f2;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    /* Ganti hover merah dengan warna Emas / Kuningan yang sedikit lebih gelap (Cokelat) */
+    background: #4e342e;
+}
