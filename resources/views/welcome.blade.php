@@ -36,7 +36,7 @@
     </div>
 
     <section class="hero text-center" id="firstView">
-        <img src="{{ asset('image/img1.png') }}" alt="Yustan & Tanti">
+        <img src="{{ asset('image/avatar2.jpg') }}" onclick="openLightbox(this)" alt="Yustan & Tanti">
         <div id="nameText">
             Yustan ❤️ Tanti
             <p class="mt-3">20 Desember 2025</p>
@@ -136,7 +136,7 @@
                         <h4 class="fw-bold text-brown">Akad Nikah</h4>
                         <p class="mb-1"><i class="bi bi-calendar-heart"></i> Sabtu, 20
                             Desember 2025</p>
-                        <p class="mb-1"><i class="bi bi-clock"></i> Pukul 07.00 WIB - 08.00 WIB
+                        <p class="mb-1"><i class="bi bi-clock"></i> Pukul 08.00 WIB - 09.00 WIB
                         </p>
                         <p class="mb-3"><i class="bi bi-geo-alt"></i> Kediaman Mempelai
                             Wanita<br>Jl. Beluk, Cungkrungan, Beluk, Kec. Bayat, Kabupaten Klaten, Jawa Tengah 57462</p>
