@@ -12,7 +12,7 @@ class PublicController extends Controller
         $comments = Comment::shown()->latest()->paginate(10);
 
         // CHECK 1: If this is an AJAX request (from Load More button)
-        if ($request->ajax()) {
+        if ($request->wantsJson()) {
             // Render the partial view for the new page of comments
             $html = view('partials.comment_list', [
                 'comments' => $comments->items() // Pass only the collection of items

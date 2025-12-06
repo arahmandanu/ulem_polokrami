@@ -36,7 +36,7 @@
     </div>
 
     <section class="hero text-center" id="firstView">
-        <img src="{{ asset('image/avatar2.jpg') }}" onclick="openLightbox(this)" alt="Yustan & Tanti">
+        <img src="{{ asset('image/newynt.jpg') }}" onclick="openLightbox(this)" alt="Yustan & Tanti">
         <div id="nameText">
             Yustan ❤️ Tanti
             <p class="mt-3">20 Desember 2025</p>
@@ -71,20 +71,20 @@
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-4 mb-4 animate-start" id="groom-card">
                     <div class="p-3">
-                        <img src="{{ asset('image/y2_f.png') }}" alt="Mempelai Pria" class="img-thumbnail"
+                        <img src="{{ asset('image/yustan only.jpg') }}" alt="Mempelai Pria" class="img-thumbnail"
                             onclick="openLightbox(this)">
                         <h4 class="fw-bold">Yustanto Kusuma Bawono</h4>
                         <p>Putra dari Bapak Sigit & Ibu Ike</p>
                     </div>
                 </div>
 
-                <div class="col-md-1 mb-4">
-                    <i class="bi bi-heart-fill text-danger" style="font-size: 3rem;"></i>
+                <div class="col-md-1 mb-4 d-flex justify-content-center align-items-center">
+                    <p class="fw-bold text-dark mb-0 section-title" style="font-size: 4rem;">&</p>
                 </div>
 
                 <div class="col-md-4 mb-4 animate-start" id="bride-card">
                     <div class="p-3">
-                        <img src="{{ asset('image/t2.png') }}" alt="Mempelai Wanita" class="img-thumbnail"
+                        <img src="{{ asset('image/tanti only.jpg') }}" alt="Mempelai Wanita" class="img-thumbnail"
                             onclick="openLightbox(this)">
                         <h4 class="fw-bold">Sri Istanti</h4>
                         <p>Putri dari Bapak Sukarno & Almh. Ibu Sarwini</p>
@@ -187,6 +187,10 @@
                     <img src="{{ asset('image/avatar3.jpg') }}" alt="Memory 4" class="memory-img rounded shadow-sm"
                         onclick="openLightbox(this)">
                 </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <img src="{{ asset('image/newynt.jpg') }}" alt="Memory 5" class="memory-img rounded shadow-sm"
+                        onclick="openLightbox(this)">
+                </div>
             </div>
         </div>
 
@@ -220,7 +224,7 @@
                         <button class="btn btn-gold mb-2" onclick="copyAlamat()">
                             <i class="bi bi-clipboard-check"></i> Salin Alamat
                         </button><br>
-                        <a href="https://www.google.com/maps?q=-8.204163,111.092561" target="_blank"
+                        <a href="https://www.google.com/maps/place/By+Tan/@-7.7797222,110.6462875,21z/data=!4m6!3m5!1s0x2e7a47000cd1bf81:0x4d032ed509d68019!8m2!3d-7.7797929!4d110.6462526!16s%2Fg%2F11yh3cq_3p?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank"
                             class="btn btn-outline-secondary">
                             <i class="bi bi-geo-alt"></i> Buka di Google Maps
                         </a>

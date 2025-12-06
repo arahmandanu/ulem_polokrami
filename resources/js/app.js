@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 // --- Import external dependencies (if any)
 // Anda mungkin perlu meletakkan impor di sini jika Anda menggunakan framework JS,
 // tapi untuk vanilla JS ini tidak perlu.
@@ -167,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
 
             // Prepend the new comment to the list
-            commentList.append(div);
+            commentList.prepend(div);
 
             // Reset the form
             e.target.reset();
@@ -303,8 +305,8 @@ if (loadMoreButton) {
 
         } catch (error) {
             console.error("Error loading more comments:", error);
-            button.disabled = false;
-            button.textContent = originalText;
+            // button.disabled = false;
+            // button.textContent = originalText;
             alert('Failed to load more comments.');
         }
     });
