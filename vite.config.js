@@ -14,18 +14,6 @@ export default defineConfig({
             ],
             refresh: true,
         }),
-        // 👇 Tambahkan Plugin Copy
-        copy({
-            targets: [
-                {
-                    // Source: path lengkap ke folder font di node_modules
-                    src: 'node_modules/bootstrap-icons/font/fonts/*',
-                    // Destination: folder tempat Anda menyimpan font di public/build
-                    dest: 'public/build/assets/fonts',
-                },
-            ],
-            hook: 'writeBundle', // Pastikan disalin setelah bundle selesai
-        }),
     ],
 
     // This build block is CRITICAL for forcing assets into correct subdirectories

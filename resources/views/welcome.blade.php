@@ -13,7 +13,7 @@
     {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/common.css') }}">
     <script src="{{ asset('js/app.js') }}" defer></script> --}}
-    @vite(['resources/js/app.js', 'resources/scss/app.scss', 'resources/css/common.css'])
+    @vite(['resources/js/app.js', 'resources/scss/app.scss'])
 </head>
 
 <body class="no-scroll">
