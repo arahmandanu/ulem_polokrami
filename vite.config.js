@@ -1,19 +1,30 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
+import { copy } from 'vite-plugin-copy';
 
 export default defineConfig({
-    // CRITICAL for WAMP subdirectory hosting (undangan-q2)
-    base: '/undangan-q2/build/',
-
     plugins: [
         laravel({
             // Define ALL your entry points here (JS, SCSS, and CSS files)
             input: [
                 'resources/js/app.js',
+                'resources/js/bootstrap.js',
                 'resources/scss/app.scss',
                 'resources/css/common.css',
             ],
             refresh: true,
+        }),
+        // 👇 Tambahkan Plugin Copy
+        copy({
+            targets: [
+                {
+                    // Source: path lengkap ke folder font di node_modules
+                    src: 'node_modules/bootstrap-icons/font/fonts/*',
+                    // Destination: folder tempat Anda menyimpan font di public/build
+                    dest: 'public/build/assets/fonts',
+                },
+            ],
+            hook: 'writeBundle', // Pastikan disalin setelah bundle selesai
         }),
     ],
 

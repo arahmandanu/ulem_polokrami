@@ -7,8 +7,8 @@
     <title>Undangan Pernikahan Yustan & Tanti</title>
     <meta name="app-base-url" content="{{ url('/') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap"
-        rel="stylesheet">
+    {{-- <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet"> --}}
 
     {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/common.css') }}">
@@ -224,8 +224,8 @@
                         <button class="btn btn-gold mb-2" onclick="copyAlamat()">
                             <i class="bi bi-clipboard-check"></i> Salin Alamat
                         </button><br>
-                        <a href="https://www.google.com/maps/place/By+Tan/@-7.7797222,110.6462875,21z/data=!4m6!3m5!1s0x2e7a47000cd1bf81:0x4d032ed509d68019!8m2!3d-7.7797929!4d110.6462526!16s%2Fg%2F11yh3cq_3p?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank"
-                            class="btn btn-outline-secondary">
+                        <a href="https://www.google.com/maps/place/By+Tan/@-7.7797222,110.6462875,21z/data=!4m6!3m5!1s0x2e7a47000cd1bf81:0x4d032ed509d68019!8m2!3d-7.7797929!4d110.6462526!16s%2Fg%2F11yh3cq_3p?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D"
+                            target="_blank" class="btn btn-outline-secondary">
                             <i class="bi bi-geo-alt"></i> Buka di Google Maps
                         </a>
                     </div>
