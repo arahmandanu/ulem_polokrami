@@ -1,0 +1,44 @@
+services:
+    # -----------------------------------------------------
+    # 1. DATABASE (MySQL) - FIXED
+    # -----------------------------------------------------
+    database:
+        image: mariadb:latest
+        ports:
+            - '3306:3306'
+        environment:
+            # 1. ROOT CONFIGURATION (Required if DB_USERNAME is 'root')
+            # This sets the password for the privileged 'root' user.
+            MYSQL_ROOT_PASSWORD: root
+            
+            # 2. APPLICATION DATABASE CREATION
+            # Creates the database your application will use.
+            MYSQL_DATABASE: ${DB_DATABASE}
+            
+            # 3. APPLICATION USER CREATION (Best Practice: Use a non-root user)
+            # These variables create a new user (e.g., 'ynt') and grant them permissions 
+            # to access the database defined in MYSQL_DATABASE.
+            MYSQL_USER: ${DB_USERNAME} 
+            MYSQL_PASSWORD: ${DB_PASSWORD}
+            
+            # Optional: Allow the application to start even if the root password is empty.
+            # MYSQL_ALLOW_EMPTY_PASSWORD: 'yes' 
+        volumes:
+            - db-data:/var/lib/mysql
+
+    # -----------------------------------------------------
+    # 2. CACHE/SESSION (Redis) - UNCHANGED
+    # -----------------------------------------------------
+    redis:
+        image: redis:7.0-alpine
+        ports:
+            - '6379:6379'
+        volumes:
+            - redis-data:/data
+
+# -----------------------------------------------------
+# VOLUMES (For Persistent Data Storage)
+# -----------------------------------------------------
+volumes:
+    db-data:
+    redis-data:

@@ -7,6 +7,8 @@
     <title>Undangan Pernikahan Yustan & Tanti</title>
     <meta name="app-base-url" content="{{ url('/') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('ic.png') }}">
     {{-- <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap"
         rel="stylesheet"> --}}
 
@@ -136,7 +138,7 @@
                         <h4 class="fw-bold text-brown">Akad Nikah</h4>
                         <p class="mb-1"><i class="bi bi-calendar-heart"></i> Sabtu, 20
                             Desember 2025</p>
-                        <p class="mb-1"><i class="bi bi-clock"></i> Pukul 08.00 WIB - 09.00 WIB
+                        <p class="mb-1"><i class="bi bi-clock"></i> Pukul 07.30 WIB - Sampai selesai
                         </p>
                         <p class="mb-3"><i class="bi bi-geo-alt"></i> Kediaman Mempelai
                             Wanita<br>Jl. Beluk, Cungkrungan, Beluk, Kec. Bayat, Kabupaten Klaten, Jawa Tengah 57462</p>
@@ -153,7 +155,7 @@
                         <h4 class="fw-bold text-brown">Resepsi Pernikahan</h4>
                         <p class="mb-1"><i class="bi bi-calendar-heart"></i> Sabtu, 20
                             Desember 2025</p>
-                        <p class="mb-1"><i class="bi bi-clock"></i> Pukul 10.00 WIB - Sampai selesai</p>
+                        <p class="mb-1"><i class="bi bi-clock"></i> Pukul 09.00 WIB - Sampai selesai</p>
                         <p class="mb-3"><i class="bi bi-geo-alt"></i> Jl. Beluk, Cungkrungan, Beluk, Kec. Bayat,
                             Kabupaten Klaten, Jawa Tengah 57462</p>
                         <a href="https://www.google.com/maps/place/By+Tan/@-7.7797222,110.6462875,21z/data=!4m6!3m5!1s0x2e7a47000cd1bf81:0x4d032ed509d68019!8m2!3d-7.7797929!4d110.6462526!16s%2Fg%2F11yh3cq_3p?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D"
@@ -227,7 +229,26 @@
                         <a href="https://www.google.com/maps/place/By+Tan/@-7.7797222,110.6462875,21z/data=!4m6!3m5!1s0x2e7a47000cd1bf81:0x4d032ed509d68019!8m2!3d-7.7797929!4d110.6462526!16s%2Fg%2F11yh3cq_3p?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D"
                             target="_blank" class="btn btn-outline-secondary">
                             <i class="bi bi-geo-alt"></i> Buka di Google Maps
-                        </a>
+                        </a>    
+                    </div>
+                </div>
+
+                <div class="col-md-5 mb-4">
+                    <div class="gift-card mx-auto h-100">
+                        <h5 class="fw-bold mb-3"><i class="bi bi-bank"></i> Transfer Bank</h5>
+                        
+                        <div class="card p-3 mb-3 bg-white shadow-sm">
+                            <p class="mb-1 text-muted">Bank Central Asia (BCA)</p>
+                            <p class="h5 fw-bold mb-1" id="noRekening">0301139585</p>
+                            <p class="mb-1">A.N. Sri Istanti</p>
+                            <button class="btn btn-sm btn-outline-primary mt-2" onclick="copyRekening()">
+                                <i class="bi bi-files"></i> Salin Nomor
+                            </button>
+                        </div>
+
+                        <p class="fst-italic text-muted mt-3">
+                            Doa restu dan kehadiran Bapak/Ibu/Saudara/i merupakan kado terindah bagi kami. Terima kasih.
+                        </p>
                     </div>
                 </div>
             </div>
